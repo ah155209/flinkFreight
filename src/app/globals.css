@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Brand primary: the deep navy used for hero sections & buttons */
+    --primary: 213 73% 16%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 213 47% 20%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Brand accent: official Flink Freight yellow #FFDC39 */
+    --accent: 49 100% 61%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 73% 16%;
+
+    --radius: 0.6rem;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 97%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 97%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 97%;
+
+    --primary: 0 0% 97%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 97%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Keep brand yellow in dark mode */
+    --accent: 49 100% 61%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 97%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 49 100% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-primary;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-widest text-accent;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+}
