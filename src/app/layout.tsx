@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import ScrollToTop from "@/components/ScrollToTop";
 import { company } from "@/lib/site";
 
 // Body text — Inter
@@ -37,6 +38,11 @@ export const metadata: Metadata = {
     template: `%s | ${company.shortName}`,
   },
   description: company.description,
+  icons: {
+    icon: "/logo-head.png",
+    shortcut: "/logo-head.png",
+    apple: "/logo-head.png",
+  },
 };
 
 export default function RootLayout({
@@ -66,6 +72,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <ScrollToTop />
         </Providers>
       </body>
     </html>

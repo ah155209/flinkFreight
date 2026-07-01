@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
@@ -21,26 +20,26 @@ export default function PageHero({
   const { t } = useApp();
 
   return (
-    <section className="relative overflow-hidden bg-[#0b1a2e] py-20 text-white">
-      {/* Background photo — same image as the home hero, stronger overlay for shorter height */}
-      <Image
-        src="/logi.png"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      {/* Heavy dark overlay — ensures headline + breadcrumb are always legible */}
-      <div className="absolute inset-0 bg-[#0b1a2e]/85" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a2e]/60 via-transparent to-[#0b1a2e]/40" />
+    /* Always dark regardless of site theme */
+    <section className="relative overflow-hidden bg-[#0d1f3c] py-20 text-white">
+      {/* Gradient — hardcoded so it never flips white in dark mode */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#111827] via-[#0d2244] to-[#1a3a6e] opacity-95" />
 
-      {/* Fine dot grid texture */}
+      {/* Dot grid */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.12]"
         style={{
           backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
           backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Diagonal speed-lines */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, #FFDC39 0px, #FFDC39 1px, transparent 1px, transparent 40px)",
         }}
       />
 
@@ -71,17 +70,17 @@ export default function PageHero({
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 flex items-center gap-1 text-sm text-slate-300"
         >
-          <Link href="/" className="hover:text-accent">
+          {/* <Link href="/" className="hover:text-accent">
             {t.breadcrumbHome}
-          </Link>
-          {crumbs.map((c) => (
+          </Link> */}
+          {/* {crumbs.map((c) => (
             <span key={c.href} className="flex items-center gap-1">
               <ChevronRight className="h-4 w-4" />
               <Link href={c.href} className="hover:text-accent">
                 {c.label}
               </Link>
             </span>
-          ))}
+          ))} */}
         </motion.nav>
       </div>
     </section>
