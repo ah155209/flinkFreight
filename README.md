@@ -1,6 +1,6 @@
-# FlinkFreight Clone
+# FlinkFreight 
 
-A clone of [flinkfreight.com](https://flinkfreight.com) built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **MongoDB**.
+A application built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **MongoDB**.
 
 This is a mostly-static informational website. The **career** and **tracking** pages from the original site are intentionally **not** implemented. Dynamic functionality is limited to the contact form and newsletter sign-up, which persist submissions to MongoDB.
 
@@ -69,7 +69,3 @@ src/
     mongodb.ts               # cached Mongoose connection
   models/                    # Contact, Subscriber schemas
 ```
-
-## Notes
-
-This project is a demo clone for educational purposes and is not affiliated with FlinkFreight Logistics. Content is paraphrased from the public website.
